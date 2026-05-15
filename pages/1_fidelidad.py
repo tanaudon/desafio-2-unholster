@@ -233,47 +233,64 @@ def etiqueta_mandato(row):
 top3 = top3.copy()
 top3['mandato'] = top3.apply(etiqueta_mandato, axis=1)
 
-# Pivot para heatmap
-top3_pivot = top3.pivot_table(
-    index='mandato',
-    columns='año_cuenta',
-    values='coincidencias',
-    aggfunc='first'
-)
-
-# Ordenar mandatos cronológicamente
+# Ordenar cronológicamente
 orden_mandatos = ['Aylwin', 'Frei', 'Lagos', 'Bachelet I', 'Piñera I', 'Bachelet II', 'Piñera II', 'Boric']
-top3_pivot = top3_pivot.reindex([m for m in orden_mandatos if m in top3_pivot.index])
+top3 = top3.sort_values('año_cuenta')
 
-fig_top3 = go.Figure(data=go.Heatmap(
-    z=top3_pivot.values,
-    x=top3_pivot.columns,
-    y=top3_pivot.index,
-    colorscale=[
-        [0, '#fee2e2'],
-        [0.33, '#fdba74'],
-        [0.66, '#86efac'],
-        [1.0, '#15803d']
-    ],
-    zmin=0,
-    zmax=3,
-    colorbar=dict(
-        title='Coincidencias',
-        tickmode='array',
-        tickvals=[0, 1, 2, 3],
-        ticktext=['0', '1', '2', '3'],
-    ),
-    hovertemplate='<b>%{y} %{x}</b><br>%{z}/3 temas coinciden<extra></extra>',
-    text=top3_pivot.values,
-    texttemplate='%{text}',
-    textfont={"size": 13},
-))
+# Construir gráfico de barras por mandato, eje X = año, eje Y = coincidencias
+# Cada barra tiene color según el valor (0,1,2,3)
+COLOR_COINCIDENCIAS = {
+    0: '#dc2626',  # rojo (mal)
+    1: '#f59e0b',  # naranja
+    2: '#84cc16',  # verde claro
+    3: '#15803d',  # verde fuerte
+}
+
+# Color de mandato (cuál presidente)
+COLOR_MANDATO = {
+    'Aylwin': '#2563eb',
+    'Frei': '#dc2626',
+    'Lagos': '#9333ea',
+    'Bachelet I': '#ea580c',
+    'Bachelet II': '#fb923c',
+    'Piñera I': '#0891b2',
+    'Piñera II': '#67e8f9',
+    'Boric': '#16a34a',
+}
+
+fig_top3 = go.Figure()
+
+# Crear una barra por mandato
+for mandato in orden_mandatos:
+    if mandato not in top3['mandato'].unique():
+        continue
+    
+    datos_m = top3[top3['mandato'] == mandato].sort_values('año_cuenta')
+    
+    fig_top3.add_trace(go.Bar(
+        x=datos_m['año_cuenta'],
+        y=datos_m['coincidencias'],
+        name=mandato,
+        marker_color=COLOR_MANDATO[mandato],
+        text=datos_m['coincidencias'],
+        textposition='outside',
+        hovertemplate='<b>%{x} (' + mandato + ')</b><br>%{y}/3 temas coinciden<extra></extra>',
+    ))
 
 fig_top3.update_layout(
-    height=350,
-    xaxis_title='Año',
-    yaxis_title='',
+    height=420,
+    xaxis_title='Año de la cuenta pública',
+    yaxis_title='Temas del top-3 que coinciden con el programa',
+    yaxis=dict(range=[0, 3.5], tickmode='array', tickvals=[0, 1, 2, 3]),
     template='plotly_white',
+    barmode='group',
+    legend=dict(
+        orientation='h',
+        yanchor='bottom',
+        y=-0.3,
+        xanchor='center',
+        x=0.5,
+    ),
     margin=dict(t=30, b=30, l=10, r=10),
 )
 
