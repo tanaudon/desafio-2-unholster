@@ -207,12 +207,11 @@ for marco in epica_orden['epica_marco'].unique():
         mode='markers',
         name=marco,
         marker=dict(size=16, color=color, line=dict(color='white', width=2)),
-        customdata=datos_m[['presidente', 'epica_descripcion', 'metafora_central']].values,
+        customdata=datos_m[['presidente', 'metafora_central']].values,
         hovertemplate=(
-            '<b>%{customdata[0]} — %{x}</b><br><br>'
-            '<b>Marco:</b> ' + marco + '<br>'
-            '<b>Metáfora:</b> %{customdata[2]}<br><br>'
-            '%{customdata[1]}<extra></extra>'
+            '<b>%{customdata[0]} — %{x}</b><br>'
+            'Marco: <b>' + marco + '</b><br>'
+            'Metáfora: %{customdata[1]}<extra></extra>'
         ),
     ))
 
@@ -239,14 +238,13 @@ st.markdown('<div class="section-header">Protagonistas y antagonistas en el tiem
 
 st.markdown("""
 <div class="explanation-box">
-<strong>Cómo se lee este gráfico:</strong> los 36 protagonistas y antagonistas 
-fueron agrupados manualmente en tipologías mayores para facilitar la lectura 
-comparativa. Cada punto del gráfico es una cuenta pública. El color indica 
-el tipo de protagonista (gráfico izquierdo) o antagonista (gráfico derecho) 
-identificado en el análisis épico.<br><br>
+<strong>Cómo se lee este gráfico:</strong> cada fila representa un gobierno. 
+Cada punto es una cuenta pública anual. El color del punto indica el tipo 
+de protagonista o antagonista identificado en el análisis épico de ese año.<br><br>
 
-La clasificación es interpretativa y abierta a discusión. Pase el cursor sobre 
-cada punto para ver la etiqueta original del análisis.
+Esta visualización permite comparar visualmente los tipos de relato que cada 
+gobierno construyó a lo largo de su mandato. Pase el cursor sobre cada punto 
+para ver la etiqueta original del análisis.
 </div>
 """, unsafe_allow_html=True)
 
@@ -271,89 +269,128 @@ COLORES_ANTAGONISTA = {
     'sin_antagonista': '#94a3b8',
 }
 
-col_prot, col_ant = st.columns(2)
+# Etiqueta de mandato
+def etiqueta_mandato_epica(row):
+    if row['presidente'] == 'bachelet' and row['año'] <= 2010:
+        return 'Bachelet I'
+    elif row['presidente'] == 'bachelet' and row['año'] >= 2014:
+        return 'Bachelet II'
+    elif row['presidente'] == 'pinera' and row['año'] <= 2013:
+        return 'Piñera I'
+    elif row['presidente'] == 'pinera' and row['año'] >= 2018:
+        return 'Piñera II'
+    else:
+        return row['presidente'].capitalize()
 
-with col_prot:
-    st.markdown("##### Protagonistas")
-    
-    fig_prot = go.Figure()
-    
-    orden_protagonistas = epica['protagonista_tipo'].value_counts().index.tolist()
-    
-    for tipo in orden_protagonistas:
-        datos_t = epica[epica['protagonista_tipo'] == tipo].sort_values('año')
-        color = COLORES_PROTAGONISTA.get(tipo, '#64748b')
-        label = datos_t.iloc[0]['protagonista_tipo_label']
-        
-        fig_prot.add_trace(go.Scatter(
-            x=datos_t['año'],
-            y=[label] * len(datos_t),
-            mode='markers',
-            name=label,
-            marker=dict(size=14, color=color, line=dict(color='white', width=1.5)),
-            customdata=datos_t[['presidente', 'protagonista_etiqueta']].values,
-            hovertemplate=(
-                '<b>%{customdata[0]} — %{x}</b><br>'
-                '<i>%{customdata[1]}</i><extra></extra>'
-            ),
-        ))
-    
-    fig_prot.update_yaxes(categoryorder='array', categoryarray=[
-        epica[epica['protagonista_tipo'] == t].iloc[0]['protagonista_tipo_label']
-        for t in orden_protagonistas[::-1]
-    ])
-    
-    fig_prot.update_layout(
-        height=400,
-        xaxis_title='Año',
-        yaxis_title='',
-        template='plotly_white',
-        showlegend=False,
-        margin=dict(t=20, b=20, l=10, r=10),
-    )
-    
-    st.plotly_chart(fig_prot, use_container_width=True)
+epica_mandato = epica.copy()
+epica_mandato['mandato'] = epica_mandato.apply(etiqueta_mandato_epica, axis=1)
 
-with col_ant:
-    st.markdown("##### Antagonistas")
+# Orden cronológico inverso (Aylwin abajo, Boric arriba si invertimos el eje)
+orden_mandatos = ['Aylwin', 'Frei', 'Lagos', 'Bachelet I', 'Piñera I',
+                  'Bachelet II', 'Piñera II', 'Boric']
+
+# ====================
+# Gráfico protagonistas
+# ====================
+
+st.markdown("##### Protagonistas")
+
+fig_prot = go.Figure()
+
+# Una traza por tipo de protagonista (para tener leyenda agrupada)
+orden_protagonistas = list(COLORES_PROTAGONISTA.keys())
+
+for tipo in orden_protagonistas:
+    datos_t = epica_mandato[epica_mandato['protagonista_tipo'] == tipo]
+    if datos_t.empty:
+        continue
     
-    fig_ant = go.Figure()
+    color = COLORES_PROTAGONISTA[tipo]
+    label = datos_t.iloc[0]['protagonista_tipo_label']
     
-    orden_antagonistas = epica['antagonista_tipo'].value_counts().index.tolist()
+    fig_prot.add_trace(go.Scatter(
+        x=datos_t['año'],
+        y=datos_t['mandato'],
+        mode='markers',
+        name=label,
+        marker=dict(size=18, color=color, line=dict(color='white', width=2)),
+        customdata=datos_t[['protagonista_etiqueta']].values,
+        hovertemplate=(
+            '<b>%{y} — %{x}</b><br>'
+            '<i>%{customdata[0]}</i><extra></extra>'
+        ),
+    ))
+
+fig_prot.update_yaxes(categoryorder='array', categoryarray=orden_mandatos[::-1])
+
+fig_prot.update_layout(
+    height=480,
+    xaxis_title='Año',
+    yaxis_title='',
+    template='plotly_white',
+    legend=dict(
+        orientation='h',
+        yanchor='bottom',
+        y=-0.25,
+        xanchor='center',
+        x=0.5,
+        title='Tipo de protagonista',
+    ),
+    margin=dict(t=20, b=30, l=10, r=10),
+)
+
+st.plotly_chart(fig_prot, use_container_width=True)
+
+# ====================
+# Gráfico antagonistas
+# ====================
+
+st.markdown("##### Antagonistas")
+
+fig_ant = go.Figure()
+
+orden_antagonistas = list(COLORES_ANTAGONISTA.keys())
+
+for tipo in orden_antagonistas:
+    datos_t = epica_mandato[epica_mandato['antagonista_tipo'] == tipo]
+    if datos_t.empty:
+        continue
     
-    for tipo in orden_antagonistas:
-        datos_t = epica[epica['antagonista_tipo'] == tipo].sort_values('año')
-        color = COLORES_ANTAGONISTA.get(tipo, '#64748b')
-        label = datos_t.iloc[0]['antagonista_tipo_label']
-        
-        fig_ant.add_trace(go.Scatter(
-            x=datos_t['año'],
-            y=[label] * len(datos_t),
-            mode='markers',
-            name=label,
-            marker=dict(size=14, color=color, line=dict(color='white', width=1.5)),
-            customdata=datos_t[['presidente', 'antagonista_etiqueta']].values,
-            hovertemplate=(
-                '<b>%{customdata[0]} — %{x}</b><br>'
-                '<i>%{customdata[1]}</i><extra></extra>'
-            ),
-        ))
+    color = COLORES_ANTAGONISTA[tipo]
+    label = datos_t.iloc[0]['antagonista_tipo_label']
     
-    fig_ant.update_yaxes(categoryorder='array', categoryarray=[
-        epica[epica['antagonista_tipo'] == t].iloc[0]['antagonista_tipo_label']
-        for t in orden_antagonistas[::-1]
-    ])
-    
-    fig_ant.update_layout(
-        height=400,
-        xaxis_title='Año',
-        yaxis_title='',
-        template='plotly_white',
-        showlegend=False,
-        margin=dict(t=20, b=20, l=10, r=10),
-    )
-    
-    st.plotly_chart(fig_ant, use_container_width=True)
+    fig_ant.add_trace(go.Scatter(
+        x=datos_t['año'],
+        y=datos_t['mandato'],
+        mode='markers',
+        name=label,
+        marker=dict(size=18, color=color, line=dict(color='white', width=2)),
+        customdata=datos_t[['antagonista_etiqueta']].values,
+        hovertemplate=(
+            '<b>%{y} — %{x}</b><br>'
+            '<i>%{customdata[0]}</i><extra></extra>'
+        ),
+    ))
+
+fig_ant.update_yaxes(categoryorder='array', categoryarray=orden_mandatos[::-1])
+
+fig_ant.update_layout(
+    height=480,
+    xaxis_title='Año',
+    yaxis_title='',
+    template='plotly_white',
+    legend=dict(
+        orientation='h',
+        yanchor='bottom',
+        y=-0.25,
+        xanchor='center',
+        x=0.5,
+        title='Tipo de antagonista',
+    ),
+    margin=dict(t=20, b=30, l=10, r=10),
+)
+
+st.plotly_chart(fig_ant, use_container_width=True)
 
 # ============================================
 # BLOQUE 4: EXPLORADOR DE DISCURSOS
