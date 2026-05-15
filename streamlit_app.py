@@ -48,10 +48,9 @@ st.markdown("---")
 st.header("Qué fuentes usa")
 
 st.markdown("""
-- **Programas presidenciales** (1990-2026): 9 documentos en PDF descargados desde el
-sitio del Congreso Nacional y archivos oficiales de campaña.
+- **Programas presidenciales** (1990-2026): 9 documentos en PDF descargados desde fuentes públicas.
 - **Cuentas públicas anuales** (1990-2025): 36 documentos en PDF descargados del sitio
-de la Cámara de Diputados.
+de la Bibloteca del Congreso Nacional.
 - **Encuesta CEP**: base consolidada 1994-2025 que reúne 64 mediciones de opinión pública
 con cobertura nacional, totalizando 94.656 entrevistas. Variables usadas:
 percepción de problemas país y aprobación presidencial.
