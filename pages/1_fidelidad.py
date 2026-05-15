@@ -212,8 +212,8 @@ de los tres temas principales del programa siguen estando en el top-3 de la
 cuenta.<br><br>
 
 Resultado posible: 3 (fidelidad total del top), 2, 1 (cambio parcial), o 0 
-(cambio total del top temático). La métrica anterior puede ser alta aunque 
-los temas principales hayan cambiado; esta lo detecta más directamente.
+(cambio total del top temático). <em>Pase el cursor sobre cada celda para 
+ver qué temas componen el top-3 del programa y de la cuenta.</em>
 </div>
 """, unsafe_allow_html=True)
 
@@ -233,66 +233,82 @@ def etiqueta_mandato(row):
 top3 = top3.copy()
 top3['mandato'] = top3.apply(etiqueta_mandato, axis=1)
 
-# Ordenar cronológicamente
+# Orden cronológico
 orden_mandatos = ['Aylwin', 'Frei', 'Lagos', 'Bachelet I', 'Piñera I', 'Bachelet II', 'Piñera II', 'Boric']
-top3 = top3.sort_values('año_cuenta')
+orden_existente = [m for m in orden_mandatos if m in top3['mandato'].unique()]
 
-# Construir gráfico de barras por mandato, eje X = año, eje Y = coincidencias
-# Cada barra tiene color según el valor (0,1,2,3)
-COLOR_COINCIDENCIAS = {
-    0: '#dc2626',  # rojo (mal)
-    1: '#f59e0b',  # naranja
-    2: '#84cc16',  # verde claro
-    3: '#15803d',  # verde fuerte
-}
+# Construir matriz de coincidencias y matriz de hover personalizado
+años_unicos = sorted(top3['año_cuenta'].unique())
 
-# Color de mandato (cuál presidente)
-COLOR_MANDATO = {
-    'Aylwin': '#2563eb',
-    'Frei': '#dc2626',
-    'Lagos': '#9333ea',
-    'Bachelet I': '#ea580c',
-    'Bachelet II': '#fb923c',
-    'Piñera I': '#0891b2',
-    'Piñera II': '#67e8f9',
-    'Boric': '#16a34a',
-}
+z_values = []      # Para colorear
+text_values = []   # Para mostrar el número en la celda
+hover_text = []    # Para el hover detallado
 
-fig_top3 = go.Figure()
+for mandato in orden_existente:
+    fila_z = []
+    fila_text = []
+    fila_hover = []
+    for año in años_unicos:
+        match = top3[(top3['mandato'] == mandato) & (top3['año_cuenta'] == año)]
+        if match.empty:
+            fila_z.append(None)
+            fila_text.append('')
+            fila_hover.append('')
+        else:
+            row = match.iloc[0]
+            fila_z.append(row['coincidencias'])
+            fila_text.append(str(int(row['coincidencias'])))
+            hover = (
+                f"<b>{mandato} — Cuenta {año}</b><br><br>"
+                f"<b>Top-3 del programa:</b><br>{row['top3_programa']}<br><br>"
+                f"<b>Top-3 de la cuenta:</b><br>{row['top3_cuenta']}<br><br>"
+                f"<b>Coincidencias:</b> {int(row['coincidencias'])}/3"
+            )
+            fila_hover.append(hover)
+    z_values.append(fila_z)
+    text_values.append(fila_text)
+    hover_text.append(fila_hover)
 
-# Crear una barra por mandato
-for mandato in orden_mandatos:
-    if mandato not in top3['mandato'].unique():
-        continue
-    
-    datos_m = top3[top3['mandato'] == mandato].sort_values('año_cuenta')
-    
-    fig_top3.add_trace(go.Bar(
-        x=datos_m['año_cuenta'],
-        y=datos_m['coincidencias'],
-        name=mandato,
-        marker_color=COLOR_MANDATO[mandato],
-        text=datos_m['coincidencias'],
-        textposition='outside',
-        hovertemplate='<b>%{x} (' + mandato + ')</b><br>%{y}/3 temas coinciden<extra></extra>',
-    ))
+fig_top3 = go.Figure(data=go.Heatmap(
+    z=z_values,
+    x=años_unicos,
+    y=orden_existente,
+    text=text_values,
+    texttemplate='%{text}',
+    textfont={"size": 13, "color": "#0f172a"},
+    customdata=hover_text,
+    hovertemplate='%{customdata}<extra></extra>',
+    colorscale=[
+        [0, '#fecaca'],
+        [0.33, '#fdba74'],
+        [0.66, '#86efac'],
+        [1.0, '#15803d']
+    ],
+    zmin=0,
+    zmax=3,
+    colorbar=dict(
+        title='Coincidencias',
+        tickmode='array',
+        tickvals=[0, 1, 2, 3],
+        ticktext=['0', '1', '2', '3'],
+        len=0.7,
+    ),
+    showscale=True,
+    xgap=2,
+    ygap=2,
+))
 
 fig_top3.update_layout(
-    height=420,
+    height=380,
     xaxis_title='Año de la cuenta pública',
-    yaxis_title='Temas del top-3 que coinciden con el programa',
-    yaxis=dict(range=[0, 3.5], tickmode='array', tickvals=[0, 1, 2, 3]),
+    yaxis_title='',
     template='plotly_white',
-    barmode='group',
-    legend=dict(
-        orientation='h',
-        yanchor='bottom',
-        y=-0.3,
-        xanchor='center',
-        x=0.5,
-    ),
     margin=dict(t=30, b=30, l=10, r=10),
+    plot_bgcolor='white',
 )
+
+# Invertir orden Y para que el gobierno más antiguo quede arriba
+fig_top3.update_yaxes(autorange='reversed')
 
 st.plotly_chart(fig_top3, use_container_width=True)
 
