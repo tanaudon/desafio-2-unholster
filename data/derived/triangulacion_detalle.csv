@@ -1,0 +1,43 @@
+caso_id,descripcion,tema,pres_antes,pres_despues,delta_presidente,ciu_antes,ciu_despues,delta_ciudadania
+bachelet2_2016,Bachelet II tras municipales 2016,Constitución,2.55,3.77,1.22,1.15,1.24,0.09
+bachelet2_2016,Bachelet II tras municipales 2016,Corrupción,4.25,1.73,-2.52,10.66,8.75,-1.91
+bachelet2_2016,Bachelet II tras municipales 2016,Derechos humanos,1.05,0.0,-1.05,1.58,1.4,-0.18
+bachelet2_2016,Bachelet II tras municipales 2016,Desigualdad,0.43,2.04,1.62,3.71,3.8,0.09
+bachelet2_2016,Bachelet II tras municipales 2016,Economía,23.36,21.39,-1.97,3.56,2.27,-1.3
+bachelet2_2016,Bachelet II tras municipales 2016,Educación,27.39,23.59,-3.8,12.07,12.06,-0.01
+bachelet2_2016,Bachelet II tras municipales 2016,Medio ambiente,4.25,5.49,1.24,1.32,1.48,0.17
+bachelet2_2016,Bachelet II tras municipales 2016,Migración,0.63,0.94,0.31,0.0,0.0,0.0
+bachelet2_2016,Bachelet II tras municipales 2016,Pensiones,2.33,2.67,0.34,0.0,4.36,4.36
+bachelet2_2016,Bachelet II tras municipales 2016,Pobreza,1.7,1.57,-0.13,6.87,7.33,0.46
+bachelet2_2016,Bachelet II tras municipales 2016,Salud,12.53,10.69,-1.84,13.76,13.61,-0.15
+bachelet2_2016,Bachelet II tras municipales 2016,Seguridad,4.88,6.14,1.26,24.09,22.62,-1.47
+bachelet2_2016,Bachelet II tras municipales 2016,Trabajo/Empleo,7.85,9.28,1.43,18.4,17.95,-0.45
+bachelet2_2016,Bachelet II tras municipales 2016,Vivienda,6.8,10.69,3.89,2.83,3.13,0.3
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Constitución,2.76,6.35,3.58,1.68,0.0,-1.68
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Corrupción,4.38,0.63,-3.74,7.21,6.65,-0.56
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Derechos humanos,1.85,3.59,1.74,2.05,1.87,-0.17
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Desigualdad,0.47,1.27,0.8,4.52,3.89,-0.62
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Economía,14.97,10.78,-4.19,0.0,0.0,0.0
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Educación,13.59,12.68,-0.91,11.5,11.75,0.25
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Medio ambiente,4.15,0.63,-3.51,1.48,2.72,1.23
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Migración,1.62,3.17,1.56,0.9,1.91,1.01
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Pensiones,5.53,4.22,-1.31,18.62,13.73,-4.88
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Pobreza,6.0,3.38,-2.61,5.43,7.64,2.2
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Salud,9.91,26.65,16.74,13.58,15.22,1.65
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Seguridad,19.12,16.7,-2.42,16.59,19.68,3.09
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Trabajo/Empleo,10.38,6.76,-3.61,14.11,10.92,-3.19
+pinera2_2020,Piñera II tras plebiscito de entrada 2020,Vivienda,5.3,3.17,-2.12,2.35,4.02,1.68
+boric_2022,Boric tras Rechazo plebiscitario 2022,Constitución,1.78,1.66,-0.13,0.49,0.0,-0.49
+boric_2022,Boric tras Rechazo plebiscitario 2022,Corrupción,3.37,2.89,-0.48,4.71,7.7,2.99
+boric_2022,Boric tras Rechazo plebiscitario 2022,Derechos humanos,3.57,4.12,0.55,0.85,0.94,0.09
+boric_2022,Boric tras Rechazo plebiscitario 2022,Desigualdad,1.98,0.7,-1.29,2.87,2.2,-0.68
+boric_2022,Boric tras Rechazo plebiscitario 2022,Economía,18.61,17.73,-0.88,3.9,3.71,-0.19
+boric_2022,Boric tras Rechazo plebiscitario 2022,Educación,14.25,11.82,-2.43,9.0,8.45,-0.54
+boric_2022,Boric tras Rechazo plebiscitario 2022,Medio ambiente,4.76,5.64,0.88,1.75,1.11,-0.64
+boric_2022,Boric tras Rechazo plebiscitario 2022,Migración,2.18,5.51,3.33,5.51,5.05,-0.46
+boric_2022,Boric tras Rechazo plebiscitario 2022,Pensiones,4.76,2.49,-2.27,10.82,9.28,-1.54
+boric_2022,Boric tras Rechazo plebiscitario 2022,Pobreza,1.59,1.23,-0.36,4.61,6.17,1.55
+boric_2022,Boric tras Rechazo plebiscitario 2022,Salud,10.68,9.22,-1.46,11.22,13.63,2.41
+boric_2022,Boric tras Rechazo plebiscitario 2022,Seguridad,13.85,21.87,8.02,31.45,29.28,-2.17
+boric_2022,Boric tras Rechazo plebiscitario 2022,Trabajo/Empleo,12.47,10.19,-2.28,8.7,8.11,-0.58
+boric_2022,Boric tras Rechazo plebiscitario 2022,Vivienda,6.15,4.95,-1.2,4.12,4.38,0.26

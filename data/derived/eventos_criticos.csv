@@ -1,0 +1,16 @@
+fecha,año,evento,tipo,nota
+1991-02-09,1991,Informe Rettig,DDHH,"Reconocimiento oficial de violaciones a DDHH. Refuerza antagonista ""pasado autoritario"" en Aylwin 1991-1992."
+1997-07-01,1997,Crisis asiática,Económico,Golpe externo al modelo. Antecede antagonista amenazas externas en Frei 1999.
+1998-10-16,1998,Detención de Pinochet en Londres,DDHH,Punto de inflexión en justicia transicional. Reactiva tematización del pasado autoritario en Frei 1999.
+2003-04-01,2003,Caso MOP-Gate,Corrupción,Escándalo de corrupción del propio gobierno. Aparece como antagonista en Lagos 2003 (único caso de corrupción institucional como adversario explícito).
+2006-05-30,2006,Revolución Pingüina,Social,"Primer ciclo de movilización estudiantil postdictadura. Antecede el lenguaje de derechos sociales y ""grupos excluidos"" en Bachelet I."
+2008-09-15,2008,Crisis financiera global,Económico,Crisis externa que impacta al país. Conecta con antagonista amenazas externas en Bachelet 2009.
+2010-02-27,2010,Terremoto y tsunami 27F,Natural,Catástrofe que reconfigura agenda. Explica antagonista amenazas externas y aparición de Salud en Piñera 2010.
+2011-08-04,2011,Movilización estudiantil universitaria,Social,Masificación demanda por educación gratuita. Antecede el lenguaje de derechos ciudadanos que articula Bachelet II.
+2015-03-01,2015,"Casos Penta, SQM, Caval",Corrupción,"Crisis de confianza en política, empresa y financiamiento electoral. Coincide con período Bachelet II que tematiza ""élites conservadoras"" como antagonista."
+2019-10-18,2019,Estallido social,Crisis,Mayor crisis política-social desde 1990. Genera el quiebre narrativo más fuerte de la serie: transición de antagonista subdesarrollo a antagonista crisis social en Piñera 2020-2021.
+2020-03-03,2020,Pandemia COVID-19 llega a Chile,Sanitaria,Primer caso. Suma a la crisis del estallido. Convierte Salud en tema dominante de Piñera 2020-2021 (Salud sube de 7.94 a 18.05 por mil palabras).
+2020-10-25,2020,Plebiscito de entrada (Apruebo),Institucional,Apertura del proceso constituyente. Hace de Constitución tema relevante en Piñera 2021 (sube de 1.40 a 4.30 por mil).
+2022-09-04,2022,Rechazo plebiscito constitucional,Institucional,"Fracasa el primer proceso constituyente. Antecede el reacomodo discursivo de Boric 2023 (única cuenta con fidelidad top-3 = 1/3, la más baja de su serie)."
+2023-12-17,2023,Segundo rechazo constitucional,Institucional,Cierra el ciclo constituyente 2019-2023 sin nueva Constitución.
+2024-09-01,2024,Caso Audios / Hermosilla,Corrupción,"Crisis de confianza en justicia, élites y lobby. Coincide con discurso de Boric 2024 que cambia antagonista hacia crimen organizado."

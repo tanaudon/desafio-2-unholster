@@ -1,0 +1,435 @@
+año,presidente,tema,pct_presidencial,pct_ciudadana,brecha
+1994,frei,Constitución,3.75,0.0,3.75
+1994,frei,Corrupción,1.5,4.42,-2.92
+1994,frei,Derechos humanos,0.56,2.47,-1.91
+1994,frei,Desigualdad,0.36,0.0,0.36
+1994,frei,Economía,37.52,6.4,31.12
+1994,frei,Educación,14.26,9.84,4.42
+1994,frei,Medio ambiente,3.2,2.45,0.75
+1994,frei,Migración,0.94,0.0,0.94
+1994,frei,Pensiones,2.25,0.0,2.25
+1994,frei,Pobreza,11.26,16.87,-5.61
+1994,frei,Salud,8.07,16.74,-8.67
+1994,frei,Seguridad,4.7,15.48,-10.78
+1994,frei,Trabajo/Empleo,6.56,18.71,-12.15
+1994,frei,Vivienda,5.06,6.62,-1.56
+1995,frei,Constitución,1.18,0.0,1.18
+1995,frei,Corrupción,0.0,3.57,-3.57
+1995,frei,Derechos humanos,3.08,2.78,0.3
+1995,frei,Desigualdad,1.9,0.0,1.9
+1995,frei,Economía,24.11,6.01,18.1
+1995,frei,Educación,24.11,9.38,14.73
+1995,frei,Medio ambiente,0.0,2.98,-2.98
+1995,frei,Migración,0.95,0.0,0.95
+1995,frei,Pensiones,3.78,0.0,3.78
+1995,frei,Pobreza,8.74,16.46,-7.72
+1995,frei,Salud,11.82,11.6,0.22
+1995,frei,Seguridad,8.04,23.25,-15.21
+1995,frei,Trabajo/Empleo,10.15,18.42,-8.27
+1995,frei,Vivienda,2.13,5.54,-3.41
+1996,frei,Constitución,1.97,0.78,1.19
+1996,frei,Corrupción,2.14,4.03,-1.89
+1996,frei,Derechos humanos,0.0,2.25,-2.25
+1996,frei,Desigualdad,0.17,0.0,0.17
+1996,frei,Economía,29.55,5.55,24.0
+1996,frei,Educación,22.49,9.75,12.74
+1996,frei,Medio ambiente,0.82,2.54,-1.72
+1996,frei,Migración,0.5,0.0,0.5
+1996,frei,Pensiones,2.14,0.0,2.14
+1996,frei,Pobreza,11.17,16.15,-4.98
+1996,frei,Salud,11.49,13.38,-1.89
+1996,frei,Seguridad,4.28,20.72,-16.44
+1996,frei,Trabajo/Empleo,5.57,19.42,-13.85
+1996,frei,Vivienda,7.71,5.42,2.29
+1997,frei,Constitución,1.2,0.87,0.33
+1997,frei,Corrupción,0.74,5.95,-5.22
+1997,frei,Derechos humanos,0.12,2.37,-2.25
+1997,frei,Desigualdad,0.98,0.0,0.98
+1997,frei,Economía,27.73,4.81,22.92
+1997,frei,Educación,24.93,8.98,15.95
+1997,frei,Medio ambiente,1.57,1.08,0.49
+1997,frei,Migración,0.86,0.0,0.86
+1997,frei,Pensiones,3.38,0.0,3.38
+1997,frei,Pobreza,7.26,17.35,-10.09
+1997,frei,Salud,12.6,11.63,0.97
+1997,frei,Seguridad,5.32,20.57,-15.25
+1997,frei,Trabajo/Empleo,8.36,20.2,-11.84
+1997,frei,Vivienda,4.95,6.19,-1.24
+1998,frei,Constitución,3.79,0.97,2.82
+1998,frei,Corrupción,1.17,4.8,-3.63
+1998,frei,Derechos humanos,0.29,2.4,-2.11
+1998,frei,Desigualdad,4.08,0.0,4.08
+1998,frei,Economía,26.53,3.93,22.6
+1998,frei,Educación,27.39,8.89,18.5
+1998,frei,Medio ambiente,1.17,2.67,-1.5
+1998,frei,Migración,1.46,0.0,1.46
+1998,frei,Pensiones,2.62,0.0,2.62
+1998,frei,Pobreza,2.34,15.24,-12.9
+1998,frei,Salud,10.79,14.3,-3.52
+1998,frei,Seguridad,7.59,22.04,-14.45
+1998,frei,Trabajo/Empleo,6.99,20.38,-13.39
+1998,frei,Vivienda,3.79,4.39,-0.59
+1999,frei,Constitución,5.33,1.64,3.7
+1999,frei,Corrupción,0.76,2.5,-1.74
+1999,frei,Derechos humanos,0.91,2.35,-1.45
+1999,frei,Desigualdad,0.3,0.0,0.3
+1999,frei,Economía,23.29,2.48,20.82
+1999,frei,Educación,26.01,8.59,17.42
+1999,frei,Medio ambiente,2.89,1.98,0.91
+1999,frei,Migración,0.91,0.0,0.91
+1999,frei,Pensiones,2.59,0.0,2.59
+1999,frei,Pobreza,5.33,15.94,-10.6
+1999,frei,Salud,8.38,12.69,-4.32
+1999,frei,Seguridad,8.07,21.47,-13.4
+1999,frei,Trabajo/Empleo,10.19,26.34,-16.15
+1999,frei,Vivienda,5.03,4.03,1.0
+2000,lagos,Constitución,7.05,1.18,5.87
+2000,lagos,Corrupción,0.83,2.19,-1.35
+2000,lagos,Derechos humanos,1.23,1.9,-0.67
+2000,lagos,Desigualdad,2.49,0.0,2.49
+2000,lagos,Economía,31.96,3.7,28.26
+2000,lagos,Educación,20.35,8.01,12.34
+2000,lagos,Medio ambiente,1.23,1.58,-0.35
+2000,lagos,Migración,0.83,0.0,0.83
+2000,lagos,Pensiones,2.89,0.0,2.89
+2000,lagos,Pobreza,3.33,14.79,-11.46
+2000,lagos,Salud,4.56,12.48,-7.92
+2000,lagos,Seguridad,8.71,21.33,-12.61
+2000,lagos,Trabajo/Empleo,10.81,28.68,-17.87
+2000,lagos,Vivienda,3.73,4.18,-0.45
+2001,lagos,Constitución,3.96,1.18,2.78
+2001,lagos,Corrupción,0.31,2.52,-2.22
+2001,lagos,Derechos humanos,0.31,1.75,-1.44
+2001,lagos,Desigualdad,0.61,0.0,0.61
+2001,lagos,Economía,22.86,3.13,19.73
+2001,lagos,Educación,24.69,8.21,16.49
+2001,lagos,Medio ambiente,1.83,1.57,0.26
+2001,lagos,Migración,0.0,0.0,0.0
+2001,lagos,Pensiones,1.53,0.0,1.53
+2001,lagos,Pobreza,1.83,14.52,-12.69
+2001,lagos,Salud,19.82,14.35,5.47
+2001,lagos,Seguridad,5.18,20.14,-14.96
+2001,lagos,Trabajo/Empleo,10.97,28.51,-17.54
+2001,lagos,Vivienda,6.1,4.13,1.97
+2002,lagos,Constitución,2.51,1.58,0.93
+2002,lagos,Corrupción,0.69,3.65,-2.97
+2002,lagos,Derechos humanos,0.0,1.63,-1.63
+2002,lagos,Desigualdad,1.59,0.0,1.59
+2002,lagos,Economía,16.14,2.31,13.83
+2002,lagos,Educación,27.05,8.96,18.09
+2002,lagos,Medio ambiente,0.45,1.45,-1.0
+2002,lagos,Migración,0.45,0.0,0.45
+2002,lagos,Pensiones,1.14,0.0,1.14
+2002,lagos,Pobreza,10.46,13.79,-3.33
+2002,lagos,Salud,20.9,14.51,6.39
+2002,lagos,Seguridad,6.13,20.06,-13.92
+2002,lagos,Trabajo/Empleo,8.85,27.71,-18.85
+2002,lagos,Vivienda,3.64,4.35,-0.71
+2003,lagos,Constitución,2.29,1.17,1.11
+2003,lagos,Corrupción,1.97,4.6,-2.63
+2003,lagos,Derechos humanos,0.32,1.87,-1.55
+2003,lagos,Desigualdad,0.32,0.0,0.32
+2003,lagos,Economía,20.67,2.41,18.26
+2003,lagos,Educación,25.58,9.9,15.69
+2003,lagos,Medio ambiente,0.32,1.34,-1.02
+2003,lagos,Migración,0.32,0.0,0.32
+2003,lagos,Pensiones,2.63,0.0,2.63
+2003,lagos,Pobreza,9.83,13.6,-3.77
+2003,lagos,Salud,10.17,13.34,-3.17
+2003,lagos,Seguridad,5.58,22.94,-17.36
+2003,lagos,Trabajo/Empleo,14.43,24.99,-10.57
+2003,lagos,Vivienda,5.58,3.84,1.74
+2004,lagos,Constitución,2.87,1.09,1.78
+2004,lagos,Corrupción,1.27,4.55,-3.27
+2004,lagos,Derechos humanos,2.25,1.85,0.39
+2004,lagos,Desigualdad,1.27,0.0,1.27
+2004,lagos,Economía,28.13,2.12,26.01
+2004,lagos,Educación,24.61,9.27,15.34
+2004,lagos,Medio ambiente,0.65,1.27,-0.62
+2004,lagos,Migración,0.95,0.0,0.95
+2004,lagos,Pensiones,4.47,0.0,4.47
+2004,lagos,Pobreza,2.54,12.47,-9.92
+2004,lagos,Salud,11.18,13.87,-2.69
+2004,lagos,Seguridad,8.64,23.77,-15.14
+2004,lagos,Trabajo/Empleo,6.39,26.37,-19.98
+2004,lagos,Vivienda,4.79,3.37,1.42
+2005,lagos,Constitución,0.9,0.32,0.58
+2005,lagos,Corrupción,0.6,3.79,-3.19
+2005,lagos,Derechos humanos,3.3,1.77,1.54
+2005,lagos,Desigualdad,4.5,0.0,4.5
+2005,lagos,Economía,21.02,3.21,17.81
+2005,lagos,Educación,33.95,10.61,23.34
+2005,lagos,Medio ambiente,1.5,1.39,0.11
+2005,lagos,Migración,0.3,0.0,0.3
+2005,lagos,Pensiones,2.7,0.0,2.7
+2005,lagos,Pobreza,6.91,12.15,-5.24
+2005,lagos,Salud,6.91,14.15,-7.25
+2005,lagos,Seguridad,4.2,23.78,-19.58
+2005,lagos,Trabajo/Empleo,7.51,24.55,-17.05
+2005,lagos,Vivienda,5.7,4.28,1.43
+2006,bachelet,Constitución,0.72,0.0,0.72
+2006,bachelet,Corrupción,0.97,4.09,-3.12
+2006,bachelet,Derechos humanos,2.88,1.33,1.55
+2006,bachelet,Desigualdad,0.97,0.0,0.97
+2006,bachelet,Economía,26.68,3.43,23.25
+2006,bachelet,Educación,18.04,12.97,5.07
+2006,bachelet,Medio ambiente,1.68,1.5,0.19
+2006,bachelet,Migración,1.45,0.0,1.45
+2006,bachelet,Pensiones,5.76,0.0,5.76
+2006,bachelet,Pobreza,4.56,11.31,-6.74
+2006,bachelet,Salud,12.26,13.26,-1.0
+2006,bachelet,Seguridad,6.25,25.82,-19.57
+2006,bachelet,Trabajo/Empleo,9.86,21.45,-11.59
+2006,bachelet,Vivienda,7.93,4.85,3.08
+2007,bachelet,Constitución,1.88,0.0,1.88
+2007,bachelet,Corrupción,3.13,3.49,-0.37
+2007,bachelet,Derechos humanos,1.88,1.15,0.72
+2007,bachelet,Desigualdad,1.25,0.0,1.25
+2007,bachelet,Economía,23.29,4.37,18.92
+2007,bachelet,Educación,28.27,11.36,16.91
+2007,bachelet,Medio ambiente,1.04,2.07,-1.03
+2007,bachelet,Migración,1.88,0.0,1.88
+2007,bachelet,Pensiones,4.38,0.0,4.38
+2007,bachelet,Pobreza,5.39,12.16,-6.77
+2007,bachelet,Salud,6.23,12.71,-6.48
+2007,bachelet,Seguridad,5.39,26.94,-21.55
+2007,bachelet,Trabajo/Empleo,8.73,21.34,-12.61
+2007,bachelet,Vivienda,7.27,4.39,2.88
+2008,bachelet,Constitución,1.65,0.0,1.65
+2008,bachelet,Corrupción,2.14,4.35,-2.21
+2008,bachelet,Derechos humanos,1.97,1.07,0.9
+2008,bachelet,Desigualdad,1.97,0.0,1.97
+2008,bachelet,Economía,22.2,9.96,12.24
+2008,bachelet,Educación,25.16,11.52,13.64
+2008,bachelet,Medio ambiente,2.46,1.95,0.51
+2008,bachelet,Migración,3.28,0.0,3.28
+2008,bachelet,Pensiones,5.11,0.0,5.11
+2008,bachelet,Pobreza,4.94,9.88,-4.95
+2008,bachelet,Salud,9.87,12.53,-2.66
+2008,bachelet,Seguridad,4.45,23.84,-19.39
+2008,bachelet,Trabajo/Empleo,8.56,21.34,-12.78
+2008,bachelet,Vivienda,6.25,3.56,2.69
+2009,bachelet,Constitución,1.62,0.0,1.62
+2009,bachelet,Corrupción,2.41,4.63,-2.22
+2009,bachelet,Derechos humanos,2.61,1.17,1.44
+2009,bachelet,Desigualdad,1.01,0.0,1.01
+2009,bachelet,Economía,24.35,3.37,20.98
+2009,bachelet,Educación,24.35,12.78,11.57
+2009,bachelet,Medio ambiente,3.22,1.94,1.28
+2009,bachelet,Migración,1.01,0.0,1.01
+2009,bachelet,Pensiones,4.03,0.0,4.03
+2009,bachelet,Pobreza,2.81,9.03,-6.22
+2009,bachelet,Salud,10.67,13.89,-3.22
+2009,bachelet,Seguridad,2.61,25.94,-23.33
+2009,bachelet,Trabajo/Empleo,13.28,22.66,-9.38
+2009,bachelet,Vivienda,6.03,4.6,1.43
+2010,pinera,Constitución,1.75,0.0,1.75
+2010,pinera,Corrupción,0.8,4.45,-3.64
+2010,pinera,Derechos humanos,1.34,0.95,0.39
+2010,pinera,Desigualdad,1.61,0.0,1.61
+2010,pinera,Economía,15.59,4.36,11.23
+2010,pinera,Educación,20.97,12.77,8.2
+2010,pinera,Medio ambiente,2.95,1.95,1.0
+2010,pinera,Migración,0.41,0.0,0.41
+2010,pinera,Pensiones,1.08,0.0,1.08
+2010,pinera,Pobreza,9.13,9.26,-0.13
+2010,pinera,Salud,16.53,13.78,2.75
+2010,pinera,Seguridad,13.31,26.22,-12.91
+2010,pinera,Trabajo/Empleo,10.35,20.49,-10.14
+2010,pinera,Vivienda,4.16,5.77,-1.6
+2011,pinera,Constitución,2.63,0.0,2.63
+2011,pinera,Corrupción,0.74,3.52,-2.78
+2011,pinera,Derechos humanos,2.44,1.38,1.07
+2011,pinera,Desigualdad,1.13,0.0,1.13
+2011,pinera,Economía,15.2,5.43,9.77
+2011,pinera,Educación,24.59,17.12,7.47
+2011,pinera,Medio ambiente,2.81,1.91,0.89
+2011,pinera,Migración,0.94,0.0,0.94
+2011,pinera,Pensiones,1.87,0.0,1.87
+2011,pinera,Pobreza,8.25,9.54,-1.29
+2011,pinera,Salud,14.26,14.14,0.12
+2011,pinera,Seguridad,9.37,25.28,-15.91
+2011,pinera,Trabajo/Empleo,9.95,16.97,-7.02
+2011,pinera,Vivienda,5.82,4.7,1.12
+2012,pinera,Constitución,1.62,0.0,1.62
+2012,pinera,Corrupción,0.65,3.46,-2.8
+2012,pinera,Derechos humanos,0.65,1.25,-0.6
+2012,pinera,Desigualdad,1.14,0.0,1.14
+2012,pinera,Economía,13.57,5.28,8.28
+2012,pinera,Educación,24.68,16.2,8.48
+2012,pinera,Medio ambiente,2.45,2.07,0.38
+2012,pinera,Migración,1.31,0.0,1.31
+2012,pinera,Pensiones,1.62,0.0,1.62
+2012,pinera,Pobreza,8.82,10.34,-1.53
+2012,pinera,Salud,13.08,14.52,-1.44
+2012,pinera,Seguridad,14.22,23.45,-9.23
+2012,pinera,Trabajo/Empleo,8.02,18.2,-10.19
+2012,pinera,Vivienda,8.16,5.22,2.94
+2013,pinera,Constitución,3.5,0.0,3.5
+2013,pinera,Corrupción,0.55,3.55,-3.0
+2013,pinera,Derechos humanos,0.93,1.39,-0.46
+2013,pinera,Desigualdad,3.31,0.0,3.31
+2013,pinera,Economía,12.34,4.65,7.7
+2013,pinera,Educación,26.35,15.7,10.65
+2013,pinera,Medio ambiente,2.21,2.37,-0.15
+2013,pinera,Migración,0.93,0.0,0.93
+2013,pinera,Pensiones,1.83,0.0,1.83
+2013,pinera,Pobreza,9.2,8.55,0.66
+2013,pinera,Salud,12.15,17.77,-5.62
+2013,pinera,Seguridad,13.27,24.69,-11.42
+2013,pinera,Trabajo/Empleo,8.47,17.65,-9.18
+2013,pinera,Vivienda,4.97,3.71,1.26
+2014,bachelet,Constitución,2.5,0.55,1.95
+2014,bachelet,Corrupción,0.72,3.22,-2.5
+2014,bachelet,Derechos humanos,0.58,1.3,-0.71
+2014,bachelet,Desigualdad,3.08,3.96,-0.88
+2014,bachelet,Economía,25.49,4.9,20.59
+2014,bachelet,Educación,26.51,16.3,10.21
+2014,bachelet,Medio ambiente,3.36,1.33,2.03
+2014,bachelet,Migración,0.14,0.0,0.14
+2014,bachelet,Pensiones,2.34,0.0,2.34
+2014,bachelet,Pobreza,2.34,7.82,-5.49
+2014,bachelet,Salud,11.86,16.9,-5.04
+2014,bachelet,Seguridad,5.86,22.76,-16.9
+2014,bachelet,Trabajo/Empleo,8.19,17.23,-9.04
+2014,bachelet,Vivienda,7.03,3.73,3.3
+2015,bachelet,Constitución,3.82,1.48,2.35
+2015,bachelet,Corrupción,2.37,9.01,-6.64
+2015,bachelet,Derechos humanos,1.46,1.26,0.2
+2015,bachelet,Desigualdad,2.56,4.24,-1.68
+2015,bachelet,Economía,21.0,3.97,17.02
+2015,bachelet,Educación,27.57,12.88,14.68
+2015,bachelet,Medio ambiente,3.46,1.3,2.16
+2015,bachelet,Migración,0.36,0.0,0.36
+2015,bachelet,Pensiones,3.11,0.0,3.11
+2015,bachelet,Pobreza,2.75,7.67,-4.93
+2015,bachelet,Salud,10.94,14.99,-4.05
+2015,bachelet,Seguridad,6.21,24.22,-18.01
+2015,bachelet,Trabajo/Empleo,8.39,15.74,-7.35
+2015,bachelet,Vivienda,6.02,3.25,2.77
+2016,bachelet,Constitución,2.55,1.15,1.4
+2016,bachelet,Corrupción,4.25,10.66,-6.41
+2016,bachelet,Derechos humanos,1.05,1.58,-0.52
+2016,bachelet,Desigualdad,0.43,3.71,-3.28
+2016,bachelet,Economía,23.36,3.56,19.8
+2016,bachelet,Educación,27.39,12.07,15.31
+2016,bachelet,Medio ambiente,4.25,1.32,2.93
+2016,bachelet,Migración,0.63,0.0,0.63
+2016,bachelet,Pensiones,2.33,0.0,2.33
+2016,bachelet,Pobreza,1.7,6.87,-5.17
+2016,bachelet,Salud,12.53,13.76,-1.23
+2016,bachelet,Seguridad,4.88,24.09,-19.21
+2016,bachelet,Trabajo/Empleo,7.85,18.4,-10.55
+2016,bachelet,Vivienda,6.8,2.83,3.97
+2017,bachelet,Constitución,3.77,1.24,2.53
+2017,bachelet,Corrupción,1.73,8.75,-7.02
+2017,bachelet,Derechos humanos,0.0,1.4,-1.4
+2017,bachelet,Desigualdad,2.04,3.8,-1.76
+2017,bachelet,Economía,21.39,2.27,19.12
+2017,bachelet,Educación,23.59,12.06,11.53
+2017,bachelet,Medio ambiente,5.49,1.48,4.01
+2017,bachelet,Migración,0.94,0.0,0.94
+2017,bachelet,Pensiones,2.67,4.36,-1.7
+2017,bachelet,Pobreza,1.57,7.33,-5.76
+2017,bachelet,Salud,10.69,13.61,-2.91
+2017,bachelet,Seguridad,6.14,22.62,-16.47
+2017,bachelet,Trabajo/Empleo,9.28,17.95,-8.67
+2017,bachelet,Vivienda,10.69,3.13,7.56
+2018,pinera,Constitución,1.66,0.95,0.71
+2018,pinera,Corrupción,2.7,6.75,-4.05
+2018,pinera,Derechos humanos,2.08,1.06,1.02
+2018,pinera,Desigualdad,0.84,2.63,-1.79
+2018,pinera,Economía,17.05,0.0,17.05
+2018,pinera,Educación,19.75,11.79,7.96
+2018,pinera,Medio ambiente,2.92,1.36,1.56
+2018,pinera,Migración,2.5,0.0,2.5
+2018,pinera,Pensiones,2.92,16.4,-13.48
+2018,pinera,Pobreza,7.48,6.88,0.6
+2018,pinera,Salud,11.21,12.69,-1.47
+2018,pinera,Seguridad,15.37,22.23,-6.86
+2018,pinera,Trabajo/Empleo,11.86,14.44,-2.58
+2018,pinera,Vivienda,1.66,2.83,-1.17
+2019,pinera,Constitución,2.76,1.68,1.08
+2019,pinera,Corrupción,4.38,7.21,-2.83
+2019,pinera,Derechos humanos,1.85,2.05,-0.2
+2019,pinera,Desigualdad,0.47,4.52,-4.05
+2019,pinera,Economía,14.97,0.0,14.97
+2019,pinera,Educación,13.59,11.5,2.09
+2019,pinera,Medio ambiente,4.15,1.48,2.66
+2019,pinera,Migración,1.62,0.9,0.72
+2019,pinera,Pensiones,5.53,18.62,-13.09
+2019,pinera,Pobreza,6.0,5.43,0.56
+2019,pinera,Salud,9.91,13.58,-3.67
+2019,pinera,Seguridad,19.12,16.59,2.53
+2019,pinera,Trabajo/Empleo,10.38,14.11,-3.73
+2019,pinera,Vivienda,5.3,2.35,2.95
+2021,pinera,Constitución,6.35,0.0,6.35
+2021,pinera,Corrupción,0.63,6.65,-6.02
+2021,pinera,Derechos humanos,3.59,1.87,1.72
+2021,pinera,Desigualdad,1.27,3.89,-2.62
+2021,pinera,Economía,10.78,0.0,10.78
+2021,pinera,Educación,12.68,11.75,0.93
+2021,pinera,Medio ambiente,0.63,2.72,-2.08
+2021,pinera,Migración,3.17,1.91,1.26
+2021,pinera,Pensiones,4.22,13.73,-9.51
+2021,pinera,Pobreza,3.38,7.64,-4.25
+2021,pinera,Salud,26.65,15.22,11.43
+2021,pinera,Seguridad,16.7,19.68,-2.98
+2021,pinera,Trabajo/Empleo,6.76,10.92,-4.15
+2021,pinera,Vivienda,3.17,4.02,-0.85
+2022,boric,Constitución,1.78,0.49,1.29
+2022,boric,Corrupción,3.37,4.71,-1.33
+2022,boric,Derechos humanos,3.57,0.85,2.72
+2022,boric,Desigualdad,1.98,2.87,-0.89
+2022,boric,Economía,18.61,3.9,14.71
+2022,boric,Educación,14.25,9.0,5.25
+2022,boric,Medio ambiente,4.76,1.75,3.01
+2022,boric,Migración,2.18,5.51,-3.33
+2022,boric,Pensiones,4.76,10.82,-6.06
+2022,boric,Pobreza,1.59,4.61,-3.03
+2022,boric,Salud,10.68,11.22,-0.54
+2022,boric,Seguridad,13.85,31.45,-17.59
+2022,boric,Trabajo/Empleo,12.47,8.7,3.77
+2022,boric,Vivienda,6.15,4.12,2.03
+2023,boric,Constitución,1.66,0.0,1.66
+2023,boric,Corrupción,2.89,7.7,-4.81
+2023,boric,Derechos humanos,4.12,0.94,3.18
+2023,boric,Desigualdad,0.7,2.2,-1.5
+2023,boric,Economía,17.73,3.71,14.02
+2023,boric,Educación,11.82,8.45,3.36
+2023,boric,Medio ambiente,5.64,1.11,4.53
+2023,boric,Migración,5.51,5.05,0.46
+2023,boric,Pensiones,2.49,9.28,-6.79
+2023,boric,Pobreza,1.23,6.17,-4.94
+2023,boric,Salud,9.22,13.63,-4.41
+2023,boric,Seguridad,21.87,29.28,-7.41
+2023,boric,Trabajo/Empleo,10.19,8.11,2.08
+2023,boric,Vivienda,4.95,4.38,0.56
+2024,boric,Constitución,2.58,0.0,2.58
+2024,boric,Corrupción,0.91,7.07,-6.16
+2024,boric,Derechos humanos,4.4,1.43,2.97
+2024,boric,Desigualdad,0.76,2.58,-1.81
+2024,boric,Economía,17.99,2.37,15.62
+2024,boric,Educación,15.44,8.35,7.09
+2024,boric,Medio ambiente,4.09,1.74,2.35
+2024,boric,Migración,3.18,6.67,-3.49
+2024,boric,Pensiones,3.32,10.77,-7.45
+2024,boric,Pobreza,1.51,4.73,-3.22
+2024,boric,Salud,11.49,10.39,1.1
+2024,boric,Seguridad,19.67,32.57,-12.91
+2024,boric,Trabajo/Empleo,10.59,8.0,2.59
+2024,boric,Vivienda,4.09,3.33,0.76
+2025,boric,Constitución,1.52,0.0,1.52
+2025,boric,Corrupción,3.25,6.08,-2.83
+2025,boric,Derechos humanos,4.01,1.12,2.89
+2025,boric,Desigualdad,1.52,2.37,-0.86
+2025,boric,Economía,15.42,1.64,13.78
+2025,boric,Educación,16.96,8.47,8.49
+2025,boric,Medio ambiente,4.18,1.31,2.87
+2025,boric,Migración,2.1,6.87,-4.77
+2025,boric,Pensiones,3.62,7.83,-4.22
+2025,boric,Pobreza,1.52,5.18,-3.66
+2025,boric,Salud,18.11,12.53,5.58
+2025,boric,Seguridad,13.51,31.47,-17.96
+2025,boric,Trabajo/Empleo,12.0,11.44,0.56
+2025,boric,Vivienda,2.3,3.7,-1.4
