@@ -8,7 +8,7 @@ Página de inicio.
 import streamlit as st
 
 st.set_page_config(
-    page_title="Discursos presidenciales chilenos",
+    page_title="Análisis Programas y Cuentas Públicas",
     page_icon="📊",
     layout="wide",
 )
@@ -21,7 +21,7 @@ st.markdown("""
 <style>
     /* Reducir padding superior */
     .block-container {
-        padding-top: 2rem;
+        padding-top: 3.5rem;
         padding-bottom: 2rem;
         max-width: 1100px;
     }
@@ -121,8 +121,8 @@ st.markdown("""
 # BANNER SUPERIOR
 # ============================================
 
-st.markdown('<div class="main-title">Discursos presidenciales chilenos 1990–2025</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Plataforma de análisis comparativo</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Análisis Programas y Cuentas Públicas</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Chile · 1990 – 2025</div>', unsafe_allow_html=True)
 
 # ============================================
 # MÉTRICAS DESTACADAS
