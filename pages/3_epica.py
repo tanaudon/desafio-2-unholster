@@ -3,9 +3,6 @@ Página 3: Evolución de la épica.
 
 Analiza los marcos narrativos de los discursos presidenciales:
 protagonista, antagonista, sueño, marco épico y metáfora central.
-
-Los análisis épicos provienen de la plataforma de Unholster, generados
-con Claude Sonnet 4.6 sobre el texto completo de cada discurso.
 """
 
 import streamlit as st
@@ -156,11 +153,6 @@ presidenciales: quién es el protagonista del relato, contra qué se enfrenta,
 qué Chile sueña, bajo qué épica se cuenta el momento histórico, y cuál es la 
 metáfora central.<br><br>
 
-A diferencia de las páginas anteriores, esta no se construye sobre las frecuencias 
-de palabras de los textos originales, sino sobre los <strong>análisis épicos 
-generados por Unholster con Claude Sonnet 4.6</strong>, descargados de su 
-plataforma pública.<br><br>
-
 Sobre esos análisis, agregamos dos capas: una tipología que agrupa los 36 
 protagonistas y antagonistas en categorías mayores, y un cruce con 15 eventos 
 críticos del período 1990-2025 para visualizar coincidencias entre cambios 
@@ -177,7 +169,7 @@ st.markdown('<div class="section-header">Trayectoria de los marcos épicos</div>
 st.markdown("""
 <div class="explanation-box">
 <strong>Cómo se lee este gráfico:</strong> cada cuenta pública entre 1990 y 
-2025 tiene un marco épico asignado por el análisis de Unholster. Los marcos 
+2025 tiene un marco épico asignado. Los marcos 
 posibles incluyen <em>reconciliación</em>, <em>modernización</em>, 
 <em>recuperación</em>, <em>oportunidad</em>, <em>crisis</em>, <em>balance</em>, 
 entre otros. Cada color representa un marco distinto, y permite ver la 
@@ -565,10 +557,7 @@ st.markdown('<div class="section-header">Limitaciones de esta sección</div>', u
 
 st.markdown("""
 <div class="limitation-box">
-<strong>1. Los análisis épicos no son nuestros.</strong> Los textos descriptivos 
-de protagonista, antagonista, sueño, marco épico y metáfora central provienen 
-de la plataforma de Unholster, donde fueron generados con un modelo de lenguaje. 
-Nuestra contribución es agruparlos en tipologías mayores y cruzarlos con eventos.<br><br>
+<strong>1. Los análisis épicos no son nuestros.</strong> Nuestra contribución es agruparlos en tipologías mayores y cruzarlos con eventos.<br><br>
 
 <strong>2. La tipología es interpretativa.</strong> La agrupación de los 36 
 protagonistas y antagonistas en categorías mayores es una lectura propia. 
