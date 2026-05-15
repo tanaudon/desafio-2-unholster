@@ -54,8 +54,6 @@ de la Bibloteca del Congreso Nacional.
 - **Encuesta CEP**: base consolidada 1994-2025 que reúne 64 mediciones de opinión pública
 con cobertura nacional, totalizando 94.656 entrevistas. Variables usadas:
 percepción de problemas país y aprobación presidencial.
-- **Análisis épicos**: scraping de la plataforma de Unholster, que generó análisis
-retóricos de los 36 discursos usando Claude Sonnet 4.6.
 """)
 
 st.markdown("---")
