@@ -442,7 +442,7 @@ st.markdown(mostrar_dimension(
 if pd.notna(discurso.get('nota_interpretativa')):
     st.markdown(f"""
     <div class="discurso-card" style="background-color: #fefce8; border-color: #fde68a;">
-        <div class="dim-title">Nota interpretativa de nuestra clasificación</div>
+        <div class="dim-title">Nota interpretativa</div>
         <div class="dim-desc">{discurso['nota_interpretativa']}</div>
     </div>
     """, unsafe_allow_html=True)
