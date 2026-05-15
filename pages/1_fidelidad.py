@@ -8,7 +8,6 @@ efectivamente desarrollados en las cuentas públicas anuales.
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-import plotly.express as px
 
 # ============================================
 # CONFIGURACIÓN DE PÁGINA
@@ -137,10 +136,6 @@ y 0.9 son moderados.
 </div>
 """, unsafe_allow_html=True)
 
-# Preparar datos para el gráfico
-# Filtrar solo cuentas (no programas) y armar para graficar
-fid_cuentas = fidelidad[fidelidad['tipo'] == 'cuenta'].copy() if 'tipo' in fidelidad.columns else fidelidad.copy()
-
 # Colores por presidente
 COLORES_PRES = {
     'aylwin': '#2563eb',
@@ -153,76 +148,40 @@ COLORES_PRES = {
 
 fig_trayectoria = go.Figure()
 
-for pres in ['aylwin', 'frei', 'lagos', 'bachelet', 'pinera', 'boric']:
-    datos_pres = fid_cuentas[fid_cuentas['presidente'] == pres].sort_values('año')
-    if datos_pres.empty:
-        continue
+# Iterar por cada combinación presidente + año_programa (porque Bachelet y Piñera tienen 2 mandatos cada uno)
+for (pres, año_prog), datos_pres in fidelidad.groupby(['presidente', 'año_programa']):
+    datos_pres = datos_pres.sort_values('año_cuenta')
     
-    # Bachelet tiene 2 mandatos, los separamos
-    if pres == 'bachelet':
-        # Mandato 1: 2006-2009
-        b1 = datos_pres[datos_pres['año'] <= 2010]
-        if not b1.empty:
-            fig_trayectoria.add_trace(go.Scatter(
-                x=b1['año'],
-                y=b1['fidelidad_js'],
-                mode='lines+markers',
-                name='Bachelet I (2006-2009)',
-                line=dict(color=COLORES_PRES[pres], width=2.5),
-                marker=dict(size=9),
-                hovertemplate='<b>%{x}</b><br>Fidelidad: %{y:.3f}<extra></extra>'
-            ))
-        # Mandato 2: 2014-2017
-        b2 = datos_pres[datos_pres['año'] >= 2014]
-        if not b2.empty:
-            fig_trayectoria.add_trace(go.Scatter(
-                x=b2['año'],
-                y=b2['fidelidad_js'],
-                mode='lines+markers',
-                name='Bachelet II (2014-2017)',
-                line=dict(color=COLORES_PRES[pres], width=2.5, dash='dot'),
-                marker=dict(size=9),
-                hovertemplate='<b>%{x}</b><br>Fidelidad: %{y:.3f}<extra></extra>'
-            ))
-    elif pres == 'pinera':
-        # Mandato 1: 2010-2013
-        p1 = datos_pres[datos_pres['año'] <= 2013]
-        if not p1.empty:
-            fig_trayectoria.add_trace(go.Scatter(
-                x=p1['año'],
-                y=p1['fidelidad_js'],
-                mode='lines+markers',
-                name='Piñera I (2010-2013)',
-                line=dict(color=COLORES_PRES[pres], width=2.5),
-                marker=dict(size=9),
-                hovertemplate='<b>%{x}</b><br>Fidelidad: %{y:.3f}<extra></extra>'
-            ))
-        # Mandato 2: 2018-2021
-        p2 = datos_pres[datos_pres['año'] >= 2018]
-        if not p2.empty:
-            fig_trayectoria.add_trace(go.Scatter(
-                x=p2['año'],
-                y=p2['fidelidad_js'],
-                mode='lines+markers',
-                name='Piñera II (2018-2021)',
-                line=dict(color=COLORES_PRES[pres], width=2.5, dash='dot'),
-                marker=dict(size=9),
-                hovertemplate='<b>%{x}</b><br>Fidelidad: %{y:.3f}<extra></extra>'
-            ))
+    # Etiqueta legible
+    if pres == 'bachelet' and año_prog == 2006:
+        nombre = 'Bachelet I (2006-2009)'
+        dash = 'solid'
+    elif pres == 'bachelet' and año_prog == 2014:
+        nombre = 'Bachelet II (2014-2017)'
+        dash = 'dot'
+    elif pres == 'pinera' and año_prog == 2010:
+        nombre = 'Piñera I (2010-2013)'
+        dash = 'solid'
+    elif pres == 'pinera' and año_prog == 2018:
+        nombre = 'Piñera II (2018-2021)'
+        dash = 'dot'
     else:
-        fig_trayectoria.add_trace(go.Scatter(
-            x=datos_pres['año'],
-            y=datos_pres['fidelidad_js'],
-            mode='lines+markers',
-            name=pres.capitalize(),
-            line=dict(color=COLORES_PRES[pres], width=2.5),
-            marker=dict(size=9),
-            hovertemplate='<b>%{x}</b><br>Fidelidad: %{y:.3f}<extra></extra>'
-        ))
+        nombre = pres.capitalize()
+        dash = 'solid'
+    
+    fig_trayectoria.add_trace(go.Scatter(
+        x=datos_pres['año_cuenta'],
+        y=datos_pres['fidelidad'],
+        mode='lines+markers',
+        name=nombre,
+        line=dict(color=COLORES_PRES[pres], width=2.5, dash=dash),
+        marker=dict(size=9),
+        hovertemplate='<b>%{x}</b><br>Fidelidad: %{y:.3f}<extra></extra>'
+    ))
 
 fig_trayectoria.update_layout(
     height=480,
-    xaxis_title='Año',
+    xaxis_title='Año de la cuenta pública',
     yaxis_title='Fidelidad (Jensen-Shannon)',
     yaxis=dict(range=[0.7, 1.0]),
     template='plotly_white',
@@ -230,7 +189,7 @@ fig_trayectoria.update_layout(
     legend=dict(
         orientation='h',
         yanchor='bottom',
-        y=-0.25,
+        y=-0.3,
         xanchor='center',
         x=0.5,
     ),
@@ -258,22 +217,38 @@ los temas principales hayan cambiado; esta lo detecta más directamente.
 </div>
 """, unsafe_allow_html=True)
 
-# Preparar heatmap top-3
+# Crear etiqueta de "gobierno-mandato"
+def etiqueta_mandato(row):
+    if row['presidente'] == 'bachelet' and row['año_programa'] == 2006:
+        return 'Bachelet I'
+    elif row['presidente'] == 'bachelet' and row['año_programa'] == 2014:
+        return 'Bachelet II'
+    elif row['presidente'] == 'pinera' and row['año_programa'] == 2010:
+        return 'Piñera I'
+    elif row['presidente'] == 'pinera' and row['año_programa'] == 2018:
+        return 'Piñera II'
+    else:
+        return row['presidente'].capitalize()
+
+top3 = top3.copy()
+top3['mandato'] = top3.apply(etiqueta_mandato, axis=1)
+
+# Pivot para heatmap
 top3_pivot = top3.pivot_table(
-    index='presidente',
-    columns='año',
-    values='coincidencias_top3',
+    index='mandato',
+    columns='año_cuenta',
+    values='coincidencias',
     aggfunc='first'
 )
 
-# Ordenar presidentes por su primer año
-orden_pres = ['aylwin', 'frei', 'lagos', 'bachelet', 'pinera', 'boric']
-top3_pivot = top3_pivot.reindex([p for p in orden_pres if p in top3_pivot.index])
+# Ordenar mandatos cronológicamente
+orden_mandatos = ['Aylwin', 'Frei', 'Lagos', 'Bachelet I', 'Piñera I', 'Bachelet II', 'Piñera II', 'Boric']
+top3_pivot = top3_pivot.reindex([m for m in orden_mandatos if m in top3_pivot.index])
 
 fig_top3 = go.Figure(data=go.Heatmap(
     z=top3_pivot.values,
     x=top3_pivot.columns,
-    y=[p.capitalize() for p in top3_pivot.index],
+    y=top3_pivot.index,
     colorscale=[
         [0, '#fee2e2'],
         [0.33, '#fdba74'],
@@ -323,30 +298,33 @@ sobre todas las cuentas del mandato comparándolas con el programa original.
 </div>
 """, unsafe_allow_html=True)
 
-# Selector de gobierno
-gobiernos_disponibles = sorted(desvios['presidente'].unique())
-gob_seleccionado = st.selectbox(
+# Agregar etiqueta de mandato también a desvios
+desvios = desvios.copy()
+desvios['mandato'] = desvios.apply(etiqueta_mandato, axis=1)
+
+# Selector de mandato
+mandatos_disponibles = [m for m in orden_mandatos if m in desvios['mandato'].unique()]
+mandato_seleccionado = st.selectbox(
     'Seleccione un gobierno:',
-    options=gobiernos_disponibles,
-    format_func=lambda x: x.capitalize(),
-    key='selector_gobierno_desvios'
+    options=mandatos_disponibles,
+    key='selector_mandato_desvios'
 )
 
 # Filtrar y agregar por tema (promedio de los desvíos del mandato)
-desvios_gob = desvios[desvios['presidente'] == gob_seleccionado].copy()
-desvios_avg = desvios_gob.groupby('tema')['desvio'].mean().reset_index()
-desvios_avg = desvios_avg.sort_values('desvio', ascending=True)
+desvios_gob = desvios[desvios['mandato'] == mandato_seleccionado].copy()
+desvios_avg = desvios_gob.groupby('tema')['diferencia'].mean().reset_index()
+desvios_avg = desvios_avg.sort_values('diferencia', ascending=True)
 
 # Colorear según signo
-colores_barras = ['#dc2626' if v < 0 else '#16a34a' for v in desvios_avg['desvio']]
+colores_barras = ['#dc2626' if v < 0 else '#16a34a' for v in desvios_avg['diferencia']]
 
 fig_desvios = go.Figure(data=go.Bar(
     y=desvios_avg['tema'],
-    x=desvios_avg['desvio'],
+    x=desvios_avg['diferencia'],
     orientation='h',
     marker_color=colores_barras,
     hovertemplate='<b>%{y}</b><br>Desvío: %{x:+.2f} por mil palabras<extra></extra>',
-    text=[f'{v:+.2f}' for v in desvios_avg['desvio']],
+    text=[f'{v:+.2f}' for v in desvios_avg['diferencia']],
     textposition='outside',
 ))
 
@@ -359,7 +337,6 @@ fig_desvios.update_layout(
     showlegend=False,
 )
 
-# Línea vertical en cero
 fig_desvios.add_vline(x=0, line_dash='solid', line_color='#94a3b8', line_width=1)
 
 st.plotly_chart(fig_desvios, use_container_width=True)
