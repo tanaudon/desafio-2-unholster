@@ -37,10 +37,6 @@ mayo de 2025.
 El proyecto combina técnicas de procesamiento de texto con datos de opinión pública del
 Centro de Estudios Públicos (CEP) para permitir distintos cruces y análisis sobre la
 relación entre el discurso presidencial y la ciudadanía a lo largo del tiempo.
-
-Esta plataforma es una propuesta de extensión del trabajo previo realizado por
-[Unholster](https://discursos-presidenciales.vercel.app), agregando capas analíticas
-adicionales sobre la base de la información ya disponible públicamente.
 """)
 
 st.markdown("---")
