@@ -324,19 +324,19 @@ for tipo in orden_protagonistas:
 fig_prot.update_yaxes(categoryorder='array', categoryarray=orden_mandatos[::-1])
 
 fig_prot.update_layout(
-    height=480,
+    height=560,
     xaxis_title='Año',
     yaxis_title='',
     template='plotly_white',
     legend=dict(
         orientation='h',
-        yanchor='bottom',
-        y=-0.25,
+        yanchor='top',
+        y=-0.18,
         xanchor='center',
         x=0.5,
         title='Tipo de protagonista',
     ),
-    margin=dict(t=20, b=30, l=10, r=10),
+    margin=dict(t=20, b=120, l=10, r=10),
 )
 
 st.plotly_chart(fig_prot, use_container_width=True)
@@ -375,19 +375,19 @@ for tipo in orden_antagonistas:
 fig_ant.update_yaxes(categoryorder='array', categoryarray=orden_mandatos[::-1])
 
 fig_ant.update_layout(
-    height=480,
+    height=560,
     xaxis_title='Año',
     yaxis_title='',
     template='plotly_white',
     legend=dict(
         orientation='h',
-        yanchor='bottom',
-        y=-0.25,
+        yanchor='top',
+        y=-0.18,
         xanchor='center',
         x=0.5,
         title='Tipo de antagonista',
     ),
-    margin=dict(t=20, b=30, l=10, r=10),
+    margin=dict(t=20, b=120, l=10, r=10),
 )
 
 st.plotly_chart(fig_ant, use_container_width=True)
