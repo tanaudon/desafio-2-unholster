@@ -207,7 +207,7 @@ with col_b:
 # CUATRO PREGUNTAS
 # ============================================
 
-st.markdown('<div class="section-header">Qué preguntas permite explorar</div>', unsafe_allow_html=True)
+st.header("Qué preguntas permite explorar")
 
 col1, col2 = st.columns(2)
 
@@ -220,10 +220,12 @@ with col1:
             de campaña y los temas sobre los que efectivamente habló en sus cuentas
             públicas anuales.
         </div>
-        <div class="question-link">→ Página: Fidelidad programática</div>
     </div>
     """, unsafe_allow_html=True)
-
+    st.page_link("pages/1_fidelidad.py", label="→ Página: Fidelidad programática")
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
     st.markdown("""
     <div class="question-card">
         <div class="question-title">3. ¿Cómo cuentan los gobiernos su propio relato?</div>
@@ -232,9 +234,9 @@ with col1:
             protagonista, contra qué se enfrenta el país, qué Chile sueña y bajo
             qué épica se cuenta el momento histórico.
         </div>
-        <div class="question-link">→ Página: Evolución de la épica</div>
     </div>
     """, unsafe_allow_html=True)
+    st.page_link("pages/3_epica.py", label="→ Página: Evolución de la épica")
 
 with col2:
     st.markdown("""
@@ -244,21 +246,23 @@ with col2:
             Comparación entre los temas del discurso presidencial y los problemas
             que la ciudadanía señala como prioridades en la encuesta CEP, año a año.
         </div>
-        <div class="question-link">→ Página: Alineamiento ciudadano</div>
     </div>
     """, unsafe_allow_html=True)
-
+    st.page_link("pages/2_alineamiento.py", label="→ Página: Alineamiento ciudadano")
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
     st.markdown("""
     <div class="question-card">
-        <div class="question-title">4. ¿Qué pasa con el discurso tras una derrota electoral?</div>
+        <div class="question-title">4. ¿Cómo interpretar correctamente estos análisis?</div>
         <div class="question-text">
-            Casos piloto que comparan cuentas públicas anteriores y posteriores
-            a eventos electorales intermedios significativos para estudiar
-            reacomodos discursivos.
+            Decisiones metodológicas, limitaciones generales del proyecto y guía
+            para entender qué tipo de preguntas estos datos sí permiten responder
+            y cuáles no.
         </div>
-        <div class="question-link">→ Página: Triangulación electoral</div>
     </div>
     """, unsafe_allow_html=True)
+    st.page_link("pages/4_lectura_de_datos.py", label="→ Página: Cómo leer estos datos")
 
 # ============================================
 # MENÚ DE LECTURA
