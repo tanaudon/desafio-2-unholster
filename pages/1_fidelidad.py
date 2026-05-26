@@ -98,7 +98,7 @@ fidelidad, top3, desvios = cargar_datos()
 # ============================================
 
 st.markdown('<div class="page-title">Fidelidad programática</div>', unsafe_allow_html=True)
-st.markdown('<div class="page-subtitle">¿Cumplen los gobiernos lo que prometen?</div>', unsafe_allow_html=True)
+st.markdown('<div class="page-subtitle">¿Hablan los gobiernos de lo que prometen?</div>', unsafe_allow_html=True)
 
 # ============================================
 # EXPLICACIÓN INICIAL
