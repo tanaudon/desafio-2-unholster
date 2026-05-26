@@ -214,7 +214,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown("""
     <div class="question-card">
-        <div class="question-title">1. ¿Cumplen los gobiernos lo que prometen?</div>
+        <div class="question-title">1. ¿Hablan los gobiernos de lo que prometen?</div>
         <div class="question-text">
             Comparación entre los temas que cada gobierno prometió en su programa
             de campaña y los temas sobre los que efectivamente habló en sus cuentas
