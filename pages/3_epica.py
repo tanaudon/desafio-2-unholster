@@ -503,6 +503,25 @@ exploratoria: las coincidencias visibles no implican causalidad.
 </div>
 """, unsafe_allow_html=True)
 
+# Función para acortar nombres de eventos
+NOMBRES_CORTOS = {
+    'Informe Rettig': 'Informe Rettig',
+    'Crisis asiática': 'Crisis asiática',
+    'Detención de Pinochet en Londres': 'Detención Pinochet',
+    'Caso MOP-Gate': 'Caso MOP-Gate',
+    'Revolución Pingüina': 'Revolución Pingüina',
+    'Crisis financiera global': 'Crisis financiera',
+    'Terremoto y tsunami 27F': 'Terremoto 27F',
+    'Movilización estudiantil universitaria': 'Movilización estudiantil',
+    'Casos Penta, SQM, Caval': 'Casos Penta/SQM/Caval',
+    'Estallido social': 'Estallido social',
+    'Pandemia COVID-19 llega a Chile': 'Pandemia COVID',
+    'Plebiscito de entrada (Apruebo)': 'Plebiscito Apruebo',
+    'Rechazo plebiscito constitucional': 'Rechazo plebiscito',
+    'Segundo rechazo constitucional': '2° rechazo constitucional',
+    'Caso Audios / Hermosilla': 'Caso Audios',
+}
+
 fig_cruzado = go.Figure()
 
 # Puntos de marcos épicos
@@ -535,8 +554,12 @@ TIPOS_EVENTO_COLOR = {
 
 orden_marcos_y = epica['epica_marco'].value_counts().index.tolist()
 
-for _, ev in eventos.iterrows():
+# Ordenar eventos por año para escalonar correctamente
+eventos_ordenados = eventos.sort_values('año').reset_index(drop=True)
+
+for i, ev in eventos_ordenados.iterrows():
     color_ev = TIPOS_EVENTO_COLOR.get(ev['tipo'], '#64748b')
+    nombre_corto = NOMBRES_CORTOS.get(ev['evento'], ev['evento'])
     
     fig_cruzado.add_vline(
         x=ev['año'],
@@ -546,11 +569,14 @@ for _, ev in eventos.iterrows():
         opacity=0.5,
     )
     
-    # Annotation con el nombre del evento
+    # Alternar entre dos alturas para evitar superposición
+    y_pos = len(orden_marcos_y) - 0.3 if i % 2 == 0 else len(orden_marcos_y) - 1.5
+    
+    # Annotation con el nombre del evento (escalonado)
     fig_cruzado.add_annotation(
         x=ev['año'],
-        y=len(orden_marcos_y) - 0.3,
-        text=ev['evento'],
+        y=y_pos,
+        text=nombre_corto,
         showarrow=False,
         font=dict(size=9, color=color_ev),
         textangle=-90,
@@ -561,12 +587,12 @@ for _, ev in eventos.iterrows():
 fig_cruzado.update_yaxes(categoryorder='array', categoryarray=orden_marcos_y[::-1])
 
 fig_cruzado.update_layout(
-    height=550,
+    height=600,
     xaxis_title='Año',
     yaxis_title='',
     template='plotly_white',
     showlegend=False,
-    margin=dict(t=80, b=30, l=10, r=10),
+    margin=dict(t=120, b=30, l=10, r=10),
 )
 
 st.plotly_chart(fig_cruzado, use_container_width=True)
