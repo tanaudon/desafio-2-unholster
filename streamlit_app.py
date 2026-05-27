@@ -207,7 +207,7 @@ with col_b:
 # CUATRO PREGUNTAS
 # ============================================
 
-st.header("Qué preguntas permite explorar")
+st.header("Cómo está organizada")
 
 col1, col2 = st.columns(2)
 
