@@ -71,3 +71,5 @@ Las limitaciones (tramos de datos, periodos cubiertos, supuestos de clasificaci�
 ## Autor
 
 Tomás Naudon
+
+_Última actualización: junio 2026._
